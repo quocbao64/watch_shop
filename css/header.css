@@ -1,66 +1,59 @@
-body
-{
+body {
     margin: 0;
 }
-#badge
-{
+#badge {
     position: absolute;
     background-color: rgb(255, 30, 30);
     color: white;
     border-radius: 50%;
     padding: 5px 8px;
     font-size: 14px;
-    top: 10px;
-    right:158px;
+    right: 80px;
+    top: 20px;
 }
-#container
-{
+#container {
     background-color: white;
     margin: auto;
     text-align: center;
     width: 100%;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1.5fr 1.5fr 5fr 1fr;
-    font-family: 'Lato', sans-serif;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    font-family: "Lato", sans-serif;
     z-index: 1;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
     box-sizing: border-box;
     position: fixed;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149); 
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+        0 2px 6px 2px rgba(60, 64, 67, 0.149);
 }
-#shopName 
-{
-    font-size: 40px; 
-    font-family: 'Lato', sans-serif;
+#shopName {
+    font-size: 40px;
+    font-family: "Lato", sans-serif;
+    display: flex;
 }
-#shopName a
-{
+#shopName a {
     text-decoration: none;
     color: rgb(29, 29, 29);
 }
-#shopName > b
-{
+#shopName > b {
     font-weight: 900;
     font: black;
 }
 
-#collection
-{
+#collection {
     font-weight: bold;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-#collection a
-{
+#collection a {
     text-decoration: none;
     color: rgb(29, 29, 29);
 }
 
-.search
-{
+.search {
     padding: 14px;
     /* color: gray; */
     color: rgb(29, 29, 29);
@@ -69,24 +62,20 @@ body
     position: absolute;
 }
 
-.addedToCart
-{
+.addedToCart {
     font-size: 1.5em;
     margin-right: 25px;
 }
-#user
-{
+#user {
     display: flex;
-    /* float: right; */
     align-items: center;
+    justify-content: flex-end;
 }
 
-.userIcon
-{
+.userIcon {
     font-size: 45px;
 }
-#input 
-{
+#input {
     width: 35em;
     height: 3em;
     padding: 2px 50px;
@@ -94,213 +83,133 @@ body
     border: none;
     border-radius: 5px;
 }
-#input::placeholder
-{
+#input::placeholder {
     font-weight: bold;
 }
-#input:focus
-{
+#input:focus {
     outline: none;
 }
-#user a
-{
-    color: rgb(29, 29, 29)
+#user a {
+    color: rgb(29, 29, 29);
+}
+#header-btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#header-btn-group a {
+    margin: 0 5px;
+}
+
+.header-avatar {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+}
+
+#dropdown-menu {
+    transform: translate(-130px, 50px);
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.dropdown-item {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dropdown-item a {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* ----------------------------- MEDIA QUERY --------------------------- */
 
-@media(max-width: 1300px)
-{
-    #collection
-    {
+@media (max-width: 1300px) {
+    #collection {
         font-size: 13px;
     }
-    #input 
-    {
+    #input {
         width: 25em;
     }
 }
-@media(max-width: 1212px)
-{
-    #collection
-    {
+@media (max-width: 1212px) {
+    #collection {
         font-size: 13px;
     }
-    #input 
-    {
+    #input {
         width: 20em;
     }
-    .addedToCart
-    {
+    .addedToCart {
         font-size: 1.5em;
         margin: 10px 20px;
     }
 }
 
-@media(max-width: 1090px)
-{
-    #container
-    {
+@media (max-width: 1090px) {
+    #container {
         display: grid;
         grid-template-columns: 1fr 2fr 0.5fr;
     }
-    #search
-    {
+    #search {
         display: none;
     }
 }
-@media(max-width: 750px)
-{
-    #shopName
-    {
+@media (max-width: 750px) {
+    #shopName {
         font-size: 28px;
     }
-    #collection
-    {
+    #collection {
         font-size: 12px;
     }
-    .userIcon
-    {
+    .userIcon {
         font-size: 35px;
     }
-    .addedToCart
-    {
+    .addedToCart {
         font-size: 1.2em;
         margin: 10px 20px;
     }
 }
 
-@media(max-width: 650px)
-{
-    #shopName
-    {
+@media (max-width: 650px) {
+    #shopName {
         font-size: 24px;
     }
-    #collection
-    {
+    #collection {
         font-size: 10px;
     }
-    .userIcon
-    {
+    .userIcon {
         font-size: 30px;
     }
 }
-@media(max-width: 550px)
-{
-    #container 
-    {
+@media (max-width: 550px) {
+    #container {
         padding: 20px 25px;
     }
 }
 
 /* badge media */
 
-@media(max-width: 1480px)
-{
-    #badge
-    {
-        right:150px;
-    }
-}
-@media(max-width: 1426px)
-{
-    #badge
-    {
-        right:142px;
-    }
-}
-@media(max-width: 1360px)
-{
-    #badge
-    {
-        right:136px;
-    }
-}
-@media(max-width: 1320px)
-{
-    #badge
-    {
-        right:129px;
-    }
-}
-@media(max-width: 1259px)
-{
-    #badge
-    {
-        right:119px;
-    }
-}
-@media(max-width: 1212px)
-{
-    #badge
-    {
-        right: 96px;
-    }
-}
-@media(max-width: 1155px)
-{
-    #badge
-    {
-        right: 87px;
-    }
-}
-@media(max-width: 1090px)
-{
-    #badge
-    {
-        right: 119px;
-    }
-}
-@media(max-width: 1030px)
-{
-    #badge
-    {
-        right: 109px;
-    }
-}
-@media(max-width: 970px)
-{
-    #badge
-    {
-        right: 100px;
-    }
-}
-@media(max-width: 910px)
-{
-    #badge
-    {
-        right: 94px;
-    }
-}
-@media(max-width: 850px)
-{
-    #badge
-    {
-        right: 87px;
-    }
-}
-@media(max-width: 750px)
-{
-    #badge
-    {
-        right: 87px;
-        padding: 3px 6px;
-        font-size: 12px;
-        top: 12px;
-    }
-}
-@media(max-width: 650px)
-{
-    #badge
-    {
-        right: 78px;
-    }
-}
-@media(max-width: 550px)
-{
-    #badge
-    {
-        right: 62px;
-        top: 18px;
+@media (max-width: 1480px) {
+    #badge {
+        right: 80px;
+        top: 20px;
     }
 }

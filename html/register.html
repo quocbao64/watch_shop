@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>ORDER PLACED | E-COMMERCE WEBSITE BY EDYODA</title>
+        <!-- favicon -->
+        <link
+            rel="icon"
+            href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+            type="image/gif"
+            sizes="16x16"
+        />
+        <!-- fontawesome -->
+        <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+            rel="stylesheet"
+        />
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="../css/login.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <div id="1"></div>
+        <script>
+            load("header.html");
+            function load(url) {
+                req = new XMLHttpRequest();
+                req.open("GET", url, false);
+                req.send(null);
+                document.getElementById(1).innerHTML = req.responseText;
+            }
+        </script>
+
+        <!-- LOGIN FORM -->
+        <div class="container align-items-center">
+            <main class="register">
+                <div class="col-md-6">
+                    <form class="text-center" id="registerForm">
+                        <h1 class="h3 mb-3 fw-normal">Register</h1>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="floatingUsername"
+                                name="floatingUsername"
+                                placeholder="Số điện thoại"
+                            />
+                            <label for="floatingUsername">Username</label>
+                            <div class="error"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="floatingPassword"
+                                name="floatingPassword"
+                                placeholder="Mật khẩu"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Tooltip on top"
+                            />
+                            <label for="floatingPassword">Password</label>
+                            <div class="error"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="floatingEmail"
+                                name="floatingEmail"
+                                placeholder="Email"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Tooltip on top"
+                            />
+                            <label for="floatingEmail">Email</label>
+                            <div class="error"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="floatingFullname"
+                                name="floatingFullname"
+                                placeholder="Mật khẩu"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Tooltip on top"
+                            />
+                            <label for="floatingFullname">Fullname</label>
+                            <div class="error"></div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="floatingPhone"
+                                name="floatingPhone"
+                                placeholder="Mật khẩu"
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Tooltip on top"
+                            />
+                            <label for="floatingPhone">Phone Number</label>
+                            <div class="error"></div>
+                        </div>
+
+                        <button
+                            class="w-100 btn btn-lg btn-primary"
+                            id="btnRegister"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Tooltip on top"
+                        >
+                            Register
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+        <!-- FOOTER -->
+        <div id="4"></div>
+        <script>
+            load("footer.html");
+            function load(url) {
+                req = new XMLHttpRequest();
+                req.open("GET", url, false);
+                req.send(null);
+                document.getElementById(4).innerHTML = req.responseText;
+            }
+        </script>
+    </body>
+    <script src="../js/register.js"></script>
+</html>

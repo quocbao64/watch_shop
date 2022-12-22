@@ -1,29 +1,5 @@
-body {
-    margin: 0;
-    font-family: "Lato", sans-serif;
-}
-h1 {
-    width: 90%;
-    margin: auto;
-    padding: 50px 0;
-    letter-spacing: 2px;
-    font-weight: 700;
-    text-transform: capitalize;
-}
-h3 {
-    font-size: 16px !important;
-}
-h4 {
-    font-size: unset !important;
-}
-
-button {
-    padding: 8px 12px;
-    background-color: rgb(3, 122, 122);
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 15px;
+#productContainer {
+    margin-top: 90px;
 }
 #containerClothing,
 #containerAccessories {

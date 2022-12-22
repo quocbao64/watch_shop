@@ -1,0 +1,17 @@
+button {
+    padding: 8px 12px;
+    background-color: rgb(3, 122, 122);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+.container {
+    padding: 130px !important;
+}
+
+.login,
+.register {
+    display: flex;
+    justify-content: center;
+}
