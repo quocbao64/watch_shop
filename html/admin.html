@@ -10,13 +10,6 @@
             content="Free Bootstrap 4 Admin Theme | Pike Admin"
         />
 
-        <!-- Bootstrap CSS -->
-        <link
-            href="../assets/css/bootstrap.min.css"
-            rel="stylesheet"
-            type="text/css"
-        />
-
         <!-- Custom CSS -->
         <link href="../assets/css/style.css" rel="stylesheet" type="text/css" />
 
@@ -29,10 +22,17 @@
         <!-- END CSS for this page -->
 
         <!-- fontawesome -->
-        <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
         <link
-            href="https://fonts.googleapis.com/css?family=Lato&display=swap"
             rel="stylesheet"
+            href="../assets/font-awesome/css/font-awesome.min.css"
+            type="text/css"
+        />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="../assets/css/bootstrap.min.css"
+            rel="stylesheet"
+            type="text/css"
         />
 
         <script
@@ -119,7 +119,6 @@
                                     ><span> Dashboard </span>
                                 </a>
                             </li>
-
                             <li class="submenu">
                                 <a href="admin/listUser.html"
                                     ><i class="fa fa-user-circle"></i
@@ -128,13 +127,13 @@
                             </li>
                             <li class="submenu">
                                 <a href="admin/listProduct.html"
-                                    ><i class="fa fa-user-circle"></i
+                                    ><i class="fa fa-product-hunt"></i
                                     ><span> List Product </span>
                                 </a>
                             </li>
                             <li class="submenu">
                                 <a href="admin/listOrder.html"
-                                    ><i class="fa fa-user-circle"></i
+                                    ><i class="fa fa-file-text"></i
                                     ><span> List Order </span>
                                 </a>
                             </li>
@@ -171,28 +170,91 @@
                         <!-- end row -->
 
                         <div class="row">
-                            <div
-                                class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
-                            >
-                                <div class="card mb-3">
-                                    <div class="card-header">
-                                        <h3>
-                                            <i class="fa fa-users"></i> User
-                                            details
-                                        </h3>
-                                    </div>
-
-                                    <div class="card-body">
-                                        <table
-                                            id="admin-user-table"
-                                            class="table table-bordered table-responsive-xl table-hover display"
-                                            style="width: 100%"
-                                        ></table>
-                                    </div>
+                            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                <div
+                                    class="card-box noradius noborder bg-success"
+                                >
+                                    <i
+                                        class="fa fa-file-text-o float-right text-white"
+                                    ></i>
+                                    <h6
+                                        class="text-white text-uppercase m-b-20"
+                                    >
+                                        Orders success
+                                    </h6>
+                                    <h1 class="m-b-20 text-white order-counter">
+                                        0
+                                    </h1>
+                                    <span class="text-white"
+                                        >Total orders success</span
+                                    >
                                 </div>
-                                <!-- end card-->
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                <div
+                                    class="card-box noradius noborder bg-danger"
+                                >
+                                    <i
+                                        class="fa fa-file-o float-right text-white"
+                                    ></i>
+                                    <h6
+                                        class="text-white text-uppercase m-b-20"
+                                    >
+                                        Orders canceled
+                                    </h6>
+                                    <h1
+                                        class="m-b-20 text-white order-cancel-counter"
+                                    >
+                                        0
+                                    </h1>
+                                    <span class="text-white cancel-rate"
+                                        >Cancel rate: 0%</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                <div
+                                    class="card-box noradius noborder bg-default"
+                                >
+                                    <i
+                                        class="fa fa-usd float-right text-white"
+                                    ></i>
+                                    <h6
+                                        class="text-white text-uppercase m-b-20"
+                                    >
+                                        Total money
+                                    </h6>
+                                    <h1 class="m-b-20 text-white money-receive">
+                                        0
+                                    </h1>
+                                    <span class="text-white"
+                                        >Money received</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                                <div class="card-box noradius noborder bg-info">
+                                    <i
+                                        class="fa fa-user-o float-right text-white"
+                                    ></i>
+                                    <h6
+                                        class="text-white text-uppercase m-b-20"
+                                    >
+                                        Users
+                                    </h6>
+                                    <h1 class="m-b-20 text-white user-counter">
+                                        0
+                                    </h1>
+                                    <span class="text-white"
+                                        >User have account</span
+                                    >
+                                </div>
                             </div>
                         </div>
+                        <!-- end row -->
                     </div>
                     <!-- END container-fluid -->
                 </div>
