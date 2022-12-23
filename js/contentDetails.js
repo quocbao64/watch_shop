@@ -59,32 +59,40 @@ function dynamicContentDetails(ob, img) {
         let order = idx + " ";
         let counter = 1;
         if (localStorage.getItem("userId")) {
-            const orderCookie = document.cookie
-                .split(",")[0]
-                .split(" ")[0]
-                .split("=")[1];
-            if (
-                orderCookie !== ob.id.toString() &&
-                orderCookie.length === 1 &&
-                document.cookie.split(",")[0].split(" ")[0].split("=")[1] !==
-                    "0"
-            ) {
-                alert("You can only have 1 item in your cart");
-                return;
+            if (document.cookie) {
+                const orderCookie = document.cookie
+                    .split(",")[0]
+                    .split(" ")[0]
+                    .split("=")[1];
+                if (
+                    orderCookie !== ob.id.toString() &&
+                    orderCookie.length === 1 &&
+                    document.cookie
+                        .split(",")[0]
+                        .split(" ")[0]
+                        .split("=")[1] !== "0"
+                ) {
+                    alert("You can only have 1 item in your cart");
+                    return;
+                }
             }
+
+            if (document.cookie.indexOf(",counter=") >= 0) {
+                order =
+                    idx +
+                    " " +
+                    document.cookie.split(",")[0].split(";")[0].split("=")[1];
+                counter =
+                    Number(
+                        document.cookie
+                            .split(",")[1]
+                            .split(";")[0]
+                            .split("=")[1]
+                    ) + 1;
+            }
+            document.cookie = "orderId=" + order + ",counter=" + counter;
+            document.getElementById("badge").innerHTML = 1;
         }
-        if (document.cookie.indexOf(",counter=") >= 0) {
-            order =
-                idx +
-                " " +
-                document.cookie.split(",")[0].split(";")[0].split("=")[1];
-            counter =
-                Number(
-                    document.cookie.split(",")[1].split(";")[0].split("=")[1]
-                ) + 1;
-        }
-        document.cookie = "orderId=" + order + ",counter=" + counter;
-        document.getElementById("badge").innerHTML = 1;
     };
     buttonTag.appendChild(buttonText);
 
