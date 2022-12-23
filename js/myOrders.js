@@ -23,7 +23,7 @@ const getNewCases = async () => {
                 data: "id",
                 render: function (id, type) {
                     if (type === "display") {
-                        const statusList = ["success", "cancel"];
+                        const statusList = ["wait", "confirm"];
                         if (
                             statusList.includes(
                                 data
