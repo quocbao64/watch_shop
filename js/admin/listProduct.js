@@ -48,6 +48,15 @@ const getListProduct = async () => {
                     return data;
                 },
             },
+            {
+                data: "id",
+                render: function (data, type) {
+                    if (type === "display") {
+                        return `<button class="btn btn-danger" id="product-${data}" onclick="clickDelete(${data})">Delete</button>`;
+                    }
+                    return data;
+                },
+            },
         ],
     });
 };
@@ -72,5 +81,26 @@ async function downloadFile() {
 }
 function clickMe(id) {
     window.location.assign(`../../html/admin/productDetails.html?${id}`);
+}
+
+async function clickDelete(id) {
+    await fetch("http://localhost:8080/api/product/delete?id=" + id, {
+        // Your POST endpoint
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${
+                JSON.parse(localStorage.getItem("user")).accessToken
+            }`,
+        },
+    })
+        .then((response) => response.json())
+        .then((success) => {
+            if (success.message === "Delete product is success") {
+                if (!alert(success.message)) window.location.reload();
+            } else {
+                alert(success.message);
+            }
+        })
+        .catch((err) => console.log(err));
 }
 getListProduct();

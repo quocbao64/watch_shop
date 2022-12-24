@@ -153,8 +153,13 @@ const create = async () => {
         .then(
             (response) => response.json() // if the response is a JSON object
         )
-        .then(async (success) => {
-            alert(success.message);
+        .then((success) => {
+            if (success.message === "Create product is success") {
+                if (!alert(success.message))
+                    window.location.assign("../../html/admin/listProduct.html");
+            } else {
+                alert(success.message);
+            }
         })
         .catch(
             (error) => console.log(error) // Handle the error response object
