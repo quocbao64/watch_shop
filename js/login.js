@@ -11,7 +11,7 @@ const validate = (e) => {
         username: document.getElementById("floatingPhone").value,
         password: document.getElementById("floatingPassword").value,
     };
-    console.log(data);
+
     fetch("http://localhost:8080/api/account/login", {
         method: "POST",
         headers: {
@@ -25,6 +25,8 @@ const validate = (e) => {
                 localStorage.setItem("userId", data.id);
                 localStorage.setItem("user", JSON.stringify(data));
                 window.location.replace("../html/index.html");
+            } else {
+                alert(data.message);
             }
         })
         .catch((error) => {
