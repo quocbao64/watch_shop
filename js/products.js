@@ -47,7 +47,7 @@ let containerAccessories = document.getElementById("containerAccessories");
 
 // SEARCH
 let btnSearch = document.getElementById("searchBtn");
-btnSearch.onclick = function () {
+btnSearch.onclick = async function () {
     let textSearch = document.getElementById("searchInput").value;
     let arrayOfNewChildren = [];
     for (let index = 0; index < contentTitle.length; index++) {
@@ -55,10 +55,12 @@ btnSearch.onclick = function () {
             contentTitle[index].title
                 .toLowerCase()
                 .includes(textSearch.toLowerCase())
-        )
+        ) {
+            let img = await downloadFile(contentTitle[index].image);
             arrayOfNewChildren.push(
-                dynamicClothingSection(contentTitle[index])
+                dynamicClothingSection(contentTitle[index], img)
             );
+        }
     }
     containerAccessories.replaceChildren(...arrayOfNewChildren);
 };
