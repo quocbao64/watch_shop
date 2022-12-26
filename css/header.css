@@ -45,8 +45,8 @@ body {
 
 #collection {
     font-weight: bold;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
 }
 #collection a {
     text-decoration: none;

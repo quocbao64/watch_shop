@@ -1,6 +1,7 @@
 // console.clear();
 
 let contentTitle;
+let brandName = window.location.search.split("?brand=")[1];
 
 function dynamicClothingSection(ob, img) {
     let boxDiv = document.createElement("div");
@@ -28,7 +29,7 @@ function dynamicClothingSection(ob, img) {
     h4.appendChild(h4Text);
 
     let h2 = document.createElement("h2");
-    let h2Text = document.createTextNode("rs  " + ob.price);
+    let h2Text = document.createTextNode(ob.price + "$");
     h2.appendChild(h2Text);
 
     boxDiv.appendChild(boxLink);
@@ -65,6 +66,13 @@ btnSearch.onclick = async function () {
     containerAccessories.replaceChildren(...arrayOfNewChildren);
 };
 
+async function appendElement(data) {
+    for (let i = 0; i < data.length; i++) {
+        let img = await downloadFile(data[i].image);
+        containerAccessories.appendChild(dynamicClothingSection(data[i], img));
+    }
+}
+
 // BACKEND CALLING
 async function downloadFile(img) {
     let image;
@@ -85,13 +93,45 @@ let httpRequest = new XMLHttpRequest();
 httpRequest.onreadystatechange = async function () {
     if (this.readyState === 4) {
         if (this.status == 200) {
-            // console.log('call successful');
+            // console.log('call successful')
             contentTitle = JSON.parse(this.responseText);
-            for (let i = 0; i < contentTitle.length; i++) {
-                let img = await downloadFile(contentTitle[i].image);
-                containerAccessories.appendChild(
-                    dynamicClothingSection(contentTitle[i], img)
-                );
+            console.log(contentTitle);
+            switch (brandName) {
+                case "rolex":
+                    let rolex = contentTitle.filter(
+                        (e) => e.brand.name.toLowerCase() === "rolex"
+                    );
+                    appendElement(rolex);
+                    break;
+                case "casio":
+                    let casio = contentTitle.filter(
+                        (e) => e.brand.name.toLowerCase() === "casio"
+                    );
+                    appendElement(casio);
+                    break;
+                case "omega":
+                    let omega = contentTitle.filter(
+                        (e) => e.brand.name.toLowerCase() === "omega"
+                    );
+                    appendElement(omega);
+                    break;
+                case "orient":
+                    let orient = contentTitle.filter(
+                        (e) => e.brand.name.toLowerCase() === "orient"
+                    );
+                    appendElement(orient);
+                    break;
+                case "citizen":
+                    let citizen = contentTitle.filter(
+                        (e) => e.brand.name.toLowerCase() === "citizen"
+                    );
+                    appendElement(citizen);
+                    break;
+                case undefined:
+                    appendElement(contentTitle);
+                    break;
+                default:
+                    break;
             }
         } else {
             console.log("call failed!");
